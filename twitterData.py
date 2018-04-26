@@ -1,6 +1,5 @@
 import tweepy
-import pandas as pd
-from IPython.display import display
+import _pickle as pickle
 from credentials import *
 
 
@@ -14,9 +13,20 @@ def tweet_config():
 
 def extract_tweets(screen_name):
     extractor = tweet_config()
-    tweets = extractor.user_timeline(screen_name=screen_name, count=2, tweet_mode="extended")
+    tweets = extractor.user_timeline(screen_name=screen_name, count=1000, tweet_mode="extended")
     new_tweet = [[tweet.full_text] for tweet in tweets]
-    print(new_tweet)
+    #print(new_tweet)
+    return new_tweet
+
+
+def writeToFile():
+    tweets = extract_tweets("realDonaldTrump")
+
+    with open("tweets.txt", "wb") as line:
+        for items in tweets:
+            for item in items:
+                line.write(u''.join(item + "\n").encode('utf-8').strip())
+
 
 if __name__ == '__main__':
-    extract_tweets("PawanKalyan")
+    writeToFile()
