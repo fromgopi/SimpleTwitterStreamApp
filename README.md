@@ -1,2 +1,2 @@
 # SimpleTwitterStreamApp
-SImpleTwitterStreamApp
+SimpleTwitterStreamApp Using Redis as data store.
