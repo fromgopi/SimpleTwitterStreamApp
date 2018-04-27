@@ -29,4 +29,4 @@ def extract_tweets(screen_name):
 
 
 if __name__ == '__main__':
-    extract_tweets("realDonaldTrump")
+    extract_tweets("Microsoft")
