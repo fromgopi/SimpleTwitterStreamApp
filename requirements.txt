@@ -3,3 +3,5 @@ numpy==1.14.2
 pandas==0.22.0
 matplotlib==2.2.2
 redis==2.10.6
+unicodecsv==0.14.1
+requests==2.18.4
